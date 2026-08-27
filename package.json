@@ -27,6 +27,14 @@
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ist0k/ctx-tree.git"
+  },
+  "homepage": "https://github.com/ist0k/ctx-tree#readme",
+  "bugs": {
+    "url": "https://github.com/ist0k/ctx-tree/issues"
+  },
   "publishConfig": {
     "access": "public"
   },
