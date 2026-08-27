@@ -117,7 +117,7 @@ export async function walk(options: WalkOptions): Promise<WalkResult> {
         isDir,
         children: [],
         truncated: false,
-        linkTarget: isSymlink ? await readLinkTarget(abs) : undefined,
+        linkTarget: isSymlink ? await readLinkTarget(abs, root) : undefined,
       }
 
       node.children.push(child)
@@ -172,12 +172,28 @@ async function isDirectory(absPath: string): Promise<boolean> {
   }
 }
 
-async function readLinkTarget(absPath: string): Promise<string | undefined> {
+/**
+ * Read a symlink target for display.
+ *
+ * Targets inside the walk root are shown relative to it. Windows junctions
+ * always report an absolute path, which would otherwise leak a machine-specific
+ * prefix into output meant for pasting elsewhere.
+ */
+async function readLinkTarget(absPath: string, root: string): Promise<string | undefined> {
+  let target: string
   try {
-    return toPosix(await readlink(absPath))
+    target = await readlink(absPath)
   } catch {
     return undefined
   }
+
+  if (!path.isAbsolute(target)) return toPosix(target)
+
+  const relative = path.relative(root, target)
+  if (relative === '' || relative.startsWith('..') || path.isAbsolute(relative)) {
+    return toPosix(target)
+  }
+  return toPosix(relative)
 }
 
 async function readIfPresent(absPath: string): Promise<string | undefined> {
