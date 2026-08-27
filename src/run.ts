@@ -6,7 +6,7 @@ import { render } from './render.js'
 import { formatSummary, summarize } from './stats.js'
 import { LARGE_TREE_THRESHOLD, walk } from './walk.js'
 
-export const VERSION = '0.1.0'
+export const VERSION = '0.1.1'
 
 const HELP = `ctx-tree ${VERSION}
 

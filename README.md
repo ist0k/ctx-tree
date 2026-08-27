@@ -1,6 +1,6 @@
 # ctx-tree
 
-[![npm](https://img.shields.io/npm/v/ctx-tree)](https://www.npmjs.com/package/ctx-tree)
+[![npm](https://img.shields.io/npm/v/@lefrui/ctx-tree)](https://www.npmjs.com/package/@lefrui/ctx-tree)
 [![ci](https://github.com/ist0k/ctx-tree/actions/workflows/ci.yml/badge.svg)](https://github.com/ist0k/ctx-tree/actions/workflows/ci.yml)
 
 Print a clean project file tree, ready to paste into an LLM chat.
@@ -32,14 +32,17 @@ on your clipboard, so the next step is Ctrl+V into the chat.
 ## Install
 
 ```sh
-npm install -g ctx-tree
+npm install -g @lefrui/ctx-tree
 ```
 
 Or skip the install:
 
 ```sh
-npx ctx-tree
+npx @lefrui/ctx-tree
 ```
+
+Either way the command is `ctx-tree`, or `ctxt` for short. The package name is
+scoped, the binaries are not.
 
 Needs Node 20 or newer.
 

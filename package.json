@@ -1,6 +1,6 @@
 {
-  "name": "ctx-tree",
-  "version": "0.1.0",
+  "name": "@lefrui/ctx-tree",
+  "version": "0.1.1",
   "description": "Print a clean project file tree for pasting into LLM chats. Respects .gitignore, skips build noise, copies to clipboard.",
   "keywords": [
     "tree",
