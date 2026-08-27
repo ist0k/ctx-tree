@@ -1,5 +1,8 @@
 # ctx-tree
 
+[![npm](https://img.shields.io/npm/v/ctx-tree)](https://www.npmjs.com/package/ctx-tree)
+[![ci](https://github.com/ist0k/ctx-tree/actions/workflows/ci.yml/badge.svg)](https://github.com/ist0k/ctx-tree/actions/workflows/ci.yml)
+
 Print a clean project file tree, ready to paste into an LLM chat.
 
 Respects `.gitignore`, skips build noise, copies the result to your clipboard.
